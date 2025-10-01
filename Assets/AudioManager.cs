@@ -86,7 +86,7 @@ public class AudioManager : MMSingleton<AudioManager>
 
     private void Start()
     {
-       // PlayMusic(MusicType.Main);
+        PlayMusic(MusicType.Main);
     }
 
     private void OnEnable()
