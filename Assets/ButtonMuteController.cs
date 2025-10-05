@@ -11,7 +11,7 @@ public class ButtonMuteController : MonoBehaviour
 
     private bool isMuted = false; 
 
-    private void Start()
+    private void OnEnable()
     {
         isMuted = AudioManager.Instance.IsMuted;
         if (isMuted)
