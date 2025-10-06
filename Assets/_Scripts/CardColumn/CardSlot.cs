@@ -3,14 +3,12 @@ using UnityEngine.EventSystems;
 
 public class CardSlot : CardColumnAbstract, IDropHandler
 {
-    //[Header("CardColumnCtrl")]
     public void OnDrop(PointerEventData eventData)
     {
         CardCtrl card = eventData.pointerDrag?.GetComponent<CardCtrl>();
-        if (card == null ) return;
+        if (card == null) return;
 
         CardColumnCtrl originalColumn = card.DragAndDrop.originalColumn;
-
         if (originalColumn.gameObject == this.gameObject) return;
 
         CardCtrl topCard = this.cardColumnCtrl.CardStack.TopCard;
@@ -32,6 +30,10 @@ public class CardSlot : CardColumnAbstract, IDropHandler
             }
         }
 
+        // ✅ Ghi lại hành động trước khi di chuyển
+        UndoManager.Instance.RecordMove(card, originalColumn, this.cardColumnCtrl, originalColumn.CardStack.transform.childCount - 1);
+
+        // Di chuyển thực tế
         originalColumn.CardStack.ArrangeCards();
         originalColumn.CardStack.LoadRaycastState();
         cardColumnCtrl.CardStack.AddCard(card);

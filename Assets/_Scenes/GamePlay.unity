@@ -3746,6 +3746,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7117918007030628373, guid: 50b597c3760fc0b43b79ad9d9be152ac, type: 3}
   m_PrefabInstance: {fileID: 1628915108}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1684602586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684602588}
+  - component: {fileID: 1684602587}
+  m_Layer: 0
+  m_Name: RedoSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1684602587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684602586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700f09c131a9cd44ea7e86983a1d361a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1684602588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684602586}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.217166, y: 1.5802586, z: -2.2069561}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1762858484 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7117918007030628373, guid: 6cfad7592cee9f74fa824d3c700c1cfa, type: 3}
@@ -5071,6 +5115,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099885343}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1684602587}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Undo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UndoManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202071513318734107, guid: d20dd0e513513e04d9ab55b5ea49994d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5088,3 +5160,4 @@ SceneRoots:
   - {fileID: 12615536}
   - {fileID: 864099577}
   - {fileID: 599797046}
+  - {fileID: 1684602588}
