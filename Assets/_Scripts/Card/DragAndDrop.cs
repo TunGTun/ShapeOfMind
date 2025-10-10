@@ -3,14 +3,16 @@ using UnityEngine.EventSystems;
 
 public class DragAndDrop : CardAbstract, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Header("DragAndDrop")]
-
-    // ====== Trạng thái ban đầu để rollback nếu thả sai ======
+    // trạng thái để rollback
     private Transform originalParent;
     private int originalSiblingIndex;
     private Vector2 originalAnchoredPos;
+    private Vector2 originalPivot;
 
-    //Optimaze
+    // offset từ pivot -> center (tính bằng world space)
+    private Vector3 pivotToCenterWorldOffset;
+
+    // nếu bạn có CardColumnCtrl
     public CardColumnCtrl originalColumn;
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -18,47 +20,65 @@ public class DragAndDrop : CardAbstract, IBeginDragHandler, IDragHandler, IEndDr
         originalParent = transform.parent;
         originalSiblingIndex = transform.GetSiblingIndex();
         originalAnchoredPos = this.cardCtrl.RectTransform.anchoredPosition;
-
+        originalPivot = this.cardCtrl.RectTransform.pivot;
         originalColumn = GetComponentInParent<CardColumnCtrl>();
 
+        // tắt raycast để UI slot nhận drop
         this.cardCtrl.CanvasGroup.blocksRaycasts = false;
 
-        // Đưa card lên canvas để hiển thị trên cùng
-        transform.SetParent(this.CardCtrl.Canvas.transform, true);
+        // --- Tính offset pivot->center ở world space (trước khi reparent!)
+        Vector2 size = this.cardCtrl.RectTransform.rect.size;
+        Vector2 pivot = this.cardCtrl.RectTransform.pivot;
+        Vector2 pivotToCenterLocal = (new Vector2(0.5f, 0.5f) - pivot) * size;
+        pivotToCenterWorldOffset = this.cardCtrl.RectTransform.TransformVector(pivotToCenterLocal);
+
+        // reparent lên canvas (giữ world position)
+        transform.SetParent(this.cardCtrl.Canvas.transform, true);
         transform.SetAsLastSibling();
+
+        // đặt ngay tâm thẻ vào con trỏ
+        if (TryGetWorldPoint(eventData, out Vector3 worldPoint))
+        {
+            transform.position = worldPoint - pivotToCenterWorldOffset;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (TryGetLocalPoint(eventData, out Vector2 localPoint))
+        if (TryGetWorldPoint(eventData, out Vector3 worldPoint))
         {
-            // Đặt lại vị trí theo con trỏ - offset để giữ đúng vị trí
-            this.cardCtrl.RectTransform.anchoredPosition = localPoint;
+            transform.position = worldPoint - pivotToCenterWorldOffset;
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Nếu chưa có slot nào nhận (parent vẫn là canvas)
-        if (transform.parent == this.CardCtrl.Canvas.transform)
+        // nếu không có slot nhận (vẫn là con của canvas) -> rollback
+        if (transform.parent == this.cardCtrl.Canvas.transform)
         {
-            // Rollback về trạng thái ban đầu
             transform.SetParent(originalParent, false);
             transform.SetSiblingIndex(originalSiblingIndex);
             this.cardCtrl.RectTransform.anchoredPosition = originalAnchoredPos;
+            this.cardCtrl.RectTransform.pivot = originalPivot;
         }
 
-        // Bật lại raycast cho card
-        this.CardCtrl.CanvasGroup.blocksRaycasts = true;
+        this.cardCtrl.CanvasGroup.blocksRaycasts = true;
     }
 
-    protected bool TryGetLocalPoint(PointerEventData eventData, out Vector2 localPoint)
+    private bool TryGetWorldPoint(PointerEventData eventData, out Vector3 worldPoint)
     {
-        return RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            this.CardCtrl.Canvas.transform as RectTransform,
+        var canvas = this.cardCtrl.Canvas;
+        if (canvas == null)
+        {
+            worldPoint = Vector3.zero;
+            return false;
+        }
+
+        return RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            canvas.transform as RectTransform,
             eventData.position,
-            this.CardCtrl.Canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : this.CardCtrl.Canvas.worldCamera,
-            out localPoint
+            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
+            out worldPoint
         );
     }
 }

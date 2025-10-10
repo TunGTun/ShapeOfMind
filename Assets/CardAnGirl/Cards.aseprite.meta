@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de9d6b9cb0d118a4584405346b6d696a
+guid: 52e2ffc1387c8f949983621f69d3113f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638930970626861783
+  platformSettingsDirtyTick: 638957297063080035
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Cards
+  - name: Cards (1)
     originalName: 
-    pivot: {x: 0.54545456, y: 0}
+    pivot: {x: 0.54545456, y: -0.020408163}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 99
-      height: 50
-    spriteID: 19b5e8d23e8f0e84da8d48d685013133
+      height: 49
+    spriteID: 6f22ee093e4ddb0469bb71a7ff44ee15
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,17 +147,17 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: Cards_0
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 39
+      y: 38
       width: 9
       height: 15
-    spriteID: e7cf37325adf05c4b91fccd145245628
+    spriteID: e9a4eeffc9900ee4fa2e7b8a8a0e63f1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -168,7 +168,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_1
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -177,8 +177,8 @@ ScriptedImporter:
       x: 22
       y: 38
       width: 9
-      height: 16
-    spriteID: 76c4975366f908f4fa253a87db95787d
+      height: 15
+    spriteID: 7a413b7fcd05bf3479d254b49c29278d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -189,17 +189,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_2
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 40
-      y: 39
+      y: 38
       width: 9
       height: 15
-    spriteID: 061ff2506306b8348aed02b1914a4add
+    spriteID: fc005f4badb0fb54491399f394bbe62e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -210,17 +210,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_3
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 58
-      y: 39
+      y: 38
       width: 9
       height: 15
-    spriteID: e4a79f3df25d3f14e84387bd045b336c
+    spriteID: d38bf44eee738dc4db08dd1513700236
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -231,17 +231,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_4
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 76
-      y: 39
+      y: 38
       width: 9
       height: 15
-    spriteID: 7ff9b0518c27eaa4f869c07b30c6a1c7
+    spriteID: 0a3dd8d2d68b3b346829b6c639836a63
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,17 +252,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_5
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 94
-      y: 39
+      y: 38
       width: 9
       height: 15
-    spriteID: 1de5cb341210a424db0b5442b63ba672
+    spriteID: 38a67f056f455a947940a0316d37578e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -273,17 +273,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_6
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 22
+      y: 21
       width: 9
       height: 15
-    spriteID: b888dddab107fdb43b6c253cfb4900f7
+    spriteID: 093ad42622e41da45a74e4c8aab95d4e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -294,7 +294,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_7
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -303,8 +303,8 @@ ScriptedImporter:
       x: 22
       y: 21
       width: 9
-      height: 16
-    spriteID: 3103ff975092fe145abedeb94b28e53d
+      height: 15
+    spriteID: cadeb6b0a9219b942a2c63e2cfba90e9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -315,17 +315,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_8
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 40
-      y: 22
+      y: 21
       width: 9
       height: 15
-    spriteID: eeb883db5231c7146bfb5418b15f33d9
+    spriteID: b43de213b82334547be9301728bb2b60
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -336,17 +336,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_9
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 58
-      y: 22
+      y: 21
       width: 9
       height: 15
-    spriteID: 28003029e3d508843b42ed761b2651fc
+    spriteID: a3d54c55995a1cb4484f9135abeaab6f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -357,17 +357,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_10
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 76
-      y: 22
+      y: 21
       width: 9
       height: 15
-    spriteID: f30fb4d84a5b3e2458a8f0a8fcdec978
+    spriteID: 53704d0ee6759ac4e92a038c609e4571
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -378,17 +378,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_11
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 94
-      y: 22
+      y: 21
       width: 9
       height: 15
-    spriteID: 2c9cece54a6f1554dac1f73230ce6a9c
+    spriteID: 390518fa7b28f6e4c8fbac9d5c86c8e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -399,17 +399,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_12
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 5
+      y: 4
       width: 9
       height: 15
-    spriteID: 30d04a8d77c7fa84abd495308ca83fdf
+    spriteID: 4127176ac37323d4fb3ca64ab6257a40
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -420,7 +420,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_13
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -429,8 +429,8 @@ ScriptedImporter:
       x: 22
       y: 4
       width: 9
-      height: 16
-    spriteID: e99698895231d9c4c882facbbf535319
+      height: 15
+    spriteID: 6d536ed00e1c60740ad7c9ffd3f88558
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -441,17 +441,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_14
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 40
-      y: 5
+      y: 4
       width: 9
       height: 15
-    spriteID: e6d8f19d6b9f82c469e56e1b3fca9dcc
+    spriteID: eaee966aa3204ac4381a4a869387f403
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -462,17 +462,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_15
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 58
-      y: 5
+      y: 4
       width: 9
       height: 15
-    spriteID: 7886aa51f3a0c2e469e468365cbb08ea
+    spriteID: 41ac4f29588e24e4bbcc9aabdba7e092
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -483,17 +483,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_16
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 76
-      y: 5
+      y: 4
       width: 9
       height: 15
-    spriteID: a556224394d90b64a98b0850f03dcf48
+    spriteID: a5de66c2c92379346bedc31e4df4fdd9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -504,17 +504,17 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Cards_17
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 94
-      y: 5
+      y: 4
       width: 9
       height: 15
-    spriteID: c198e359d9e4b0744b85017e47cdd3ee
+    spriteID: a6da5da3fe96ef5409d410b6c27b35c1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -526,12 +526,12 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 949723079
+      value0: 2662752379
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Cards
+    name: Cards (1)
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -541,10 +541,10 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 0
+        y: 1
         width: 99
-        height: 50
-      spriteId: 19b5e8d23e8f0e84da8d48d685013133
+        height: 49
+      spriteId: 6f22ee093e4ddb0469bb71a7ff44ee15
     linkedCells: []
     parentIndex: -1
   platformSettings:

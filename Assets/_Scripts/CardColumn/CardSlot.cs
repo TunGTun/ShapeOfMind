@@ -37,5 +37,6 @@ public class CardSlot : CardColumnAbstract, IDropHandler
         originalColumn.CardStack.ArrangeCards();
         originalColumn.CardStack.LoadRaycastState();
         cardColumnCtrl.CardStack.AddCard(card);
+        cardColumnCtrl.CardBoardCtrl.BoardAutoResize.ResizeBoard();
     }
 }
