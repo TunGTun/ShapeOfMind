@@ -12,7 +12,6 @@ public class CardStack : CardColumnAbstract
         base.LoadComponents();
         this.ArrangeCards();
         this.LoadRaycastState();
-        this.cardColumnCtrl.CardBoardCtrl.BoardAutoResize.ResizeBoard();
     }
 
     public void AddCard(CardCtrl card)
