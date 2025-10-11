@@ -3,6 +3,13 @@ using UnityEngine.EventSystems;
 
 public class CardSlot : CardColumnAbstract, IDropHandler
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        this.cardColumnCtrl.CardBoardCtrl.BoardAutoResize.ResizeBoard();
+        Data.StepCount = 0;
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         CardCtrl card = eventData.pointerDrag?.GetComponent<CardCtrl>();
@@ -37,5 +44,7 @@ public class CardSlot : CardColumnAbstract, IDropHandler
         originalColumn.CardStack.ArrangeCards();
         originalColumn.CardStack.LoadRaycastState();
         cardColumnCtrl.CardStack.AddCard(card);
+        cardColumnCtrl.CardBoardCtrl.BoardAutoResize.ResizeBoard();
+        Data.StepCount++;
     }
 }

@@ -58,7 +58,7 @@ public class CardStack : CardColumnAbstract
 
     public void ArrangeCards()
     {
-        float startY = Data.globalOffsetY + Data.childOffsetY;
+        float startY = Data.globalOffsetY + Data.childOffsetY - 20f;
 
         for (int i = 0; i < transform.childCount; i++)
         {

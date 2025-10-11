@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class CardColumnCtrl : MyBehaviour
@@ -10,11 +11,15 @@ public class CardColumnCtrl : MyBehaviour
     [SerializeField] protected CardStack cardStack;
     public CardStack CardStack => cardStack;
 
+    [SerializeField] protected CardBoardCtrl cardBoardCtrl;
+    public CardBoardCtrl CardBoardCtrl => cardBoardCtrl;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadCardSlot();
         this.LoadCardStack();
+        this.LoadCardBoardCtrl();
     }
 
     protected virtual void LoadCardSlot()
@@ -29,5 +34,12 @@ public class CardColumnCtrl : MyBehaviour
         if (cardStack != null) return;
         cardStack = GetComponent<CardStack>();
         Debug.LogWarning(transform.name + ": LoadCardStack", gameObject);
+    }
+
+    protected virtual void LoadCardBoardCtrl()
+    {
+        if (cardBoardCtrl != null) return;
+        cardBoardCtrl = GetComponentInParent<CardBoardCtrl>();
+        Debug.LogWarning(transform.name + ": LoadCardBoardCtrl", gameObject);
     }
 }

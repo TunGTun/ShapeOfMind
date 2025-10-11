@@ -41,5 +41,9 @@ public class UndoManager : MMSingleton<UndoManager>
         // Cập nhật lại hiển thị
         last.fromColumn.CardStack.ArrangeCards();
         last.toColumn.CardStack.ArrangeCards();
+
+        last.toColumn.CardBoardCtrl.BoardAutoResize.ResizeBoard();
+
+        Data.StepCount--;
     }
 }
