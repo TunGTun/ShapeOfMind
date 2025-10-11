@@ -6,7 +6,8 @@ public class GameplayManager : MMSingleton<GameplayManager>
 {
     [Header("Controller")]
     public ObjectPool ObjectPool;
+    public CardBoardCtrl CardBoardController;
     
     [Header("Card Infos")]
-    public List<CardInfo> CardInfos;
+    public List<CardCtrl> CardInfos;
 }

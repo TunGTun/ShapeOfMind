@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class ObjectPool : MyBehaviour
 {
-    private List<CardInfo> cardInfos = new List<CardInfo>();
-    private Dictionary<CardInfo, Queue<CardInfo>> _cardPool = new Dictionary<CardInfo, Queue<CardInfo>>();
+    private List<CardCtrl> _cardInfos = new List<CardCtrl>();
+    private Dictionary<CardCtrl, Queue<CardCtrl>> _cardPool = new Dictionary<CardCtrl, Queue<CardCtrl>>();
     
     protected override void Awake()
     {
-        cardInfos = GameplayManager.Instance.CardInfos;
-        foreach (var card in cardInfos)
+        _cardInfos = GameplayManager.Instance.CardInfos;
+        foreach (var card in _cardInfos)
         {
             InstantiateCards(card, 10);
         }
     }
 
-    private void InstantiateCards(CardInfo cardInfo, int amount = 1)
+    private void InstantiateCards(CardCtrl cardInfo, int amount = 1)
     {
         if (!_cardPool.ContainsKey(cardInfo))
         {
-            _cardPool.Add(cardInfo, new Queue<CardInfo>());
+            _cardPool.Add(cardInfo, new Queue<CardCtrl>());
         }
 
         for (int i = 0; i < amount; i++)
@@ -30,7 +30,7 @@ public class ObjectPool : MyBehaviour
         }
     }
 
-    public CardInfo GetCardInfo(CardInfo cardInfo)
+    public CardCtrl GetCardInfo(CardCtrl cardInfo)
     {
         if (!_cardPool.ContainsKey(cardInfo))
         {
@@ -49,9 +49,9 @@ public class ObjectPool : MyBehaviour
         return card;
     }
     
-    public CardInfo GetCardInfo(ECardColor cardColor, ECardForm cardForm)
+    public CardCtrl GetCardInfo(ECardColor cardColor, ECardForm cardForm)
     {
-        CardInfo originalCardInfo = cardInfos.Find(c => c.CardColor == cardColor && c.CardForm == cardForm);
+        CardCtrl originalCardInfo = _cardInfos.Find(c => c.CardInfo.CardColor == cardColor && c.CardInfo.CardForm == cardForm);
         
         if (originalCardInfo == null)
         {
@@ -62,7 +62,7 @@ public class ObjectPool : MyBehaviour
         return GetCardInfo(originalCardInfo);
     }
 
-    public void ReturnToPool(CardInfo card)
+    public void ReturnToPool(CardCtrl card)
     {
         if (card == null)
         {

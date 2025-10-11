@@ -23,6 +23,11 @@ public class MyBehaviour : MonoBehaviour
         //For override
     }
 
+    public virtual void ReloadComponents()
+    {
+        LoadComponents();
+    }
+
     protected virtual void ResetValue()
     {
         //For override
