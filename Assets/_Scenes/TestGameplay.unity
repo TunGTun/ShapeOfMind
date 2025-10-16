@@ -2016,6 +2016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPool: {fileID: 398432021}
   CardBoardController: {fileID: 873179837}
+  LevelGenerator: {fileID: 806446142}
   CardInfos:
   - {fileID: 2379222428108788270, guid: c08d327b3708d7a4bbdcf037c0c56bec, type: 3}
   - {fileID: 2379222428108788270, guid: 75435fc93cfe0b449a2cfa84db1032d6, type: 3}

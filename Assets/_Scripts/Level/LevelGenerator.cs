@@ -10,14 +10,20 @@ public class LevelGenerator : MyBehaviour
     private bool[,] _cardCheck;
     private List<(int, int)> _validSequence = new List<(int, int)>(); // color, form
 
+    private int _seed = 264264;
+    private System.Random _random;
+    
     protected override void Awake()
     {
         _cardInfos = GameplayManager.Instance.CardInfos;
     }
 
-    protected override void Start()
+    public void SetDataAndGenerateLevel(LevelSO levelData)
     {
-        GenerateLevel();
+        _seed = 264264 + levelData.levelID * levelData.cardColorAmount;
+        _random = new System.Random(_seed);
+        
+        GenerateLevel(levelData.cardColorAmount);
     }
 
     private void GenerateLevel(int colorAmount = 3)
@@ -52,7 +58,7 @@ public class LevelGenerator : MyBehaviour
             var randomIndex = 0;
             while (true)
             {
-                randomIndex = Random.Range(0, cardColumns.Length);
+                randomIndex = _random.Next(0, cardColumns.Length);
 
                 if (((randomIndex == 0 || randomIndex == 3) && cardColumns[randomIndex].transform.childCount == 5) ||
                     ((randomIndex == 1 || randomIndex == 2) && cardColumns[randomIndex].transform.childCount == 4))
@@ -108,7 +114,15 @@ public class LevelGenerator : MyBehaviour
         {
             list.Add(i);
         }
-        list.MMShuffle();
+        
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = _random.Next(n + 1);
+            (list[k], list[n]) = (list[n], list[k]);
+        }
+        
         return list;
     }
 
